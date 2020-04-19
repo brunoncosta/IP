@@ -29,14 +29,11 @@ Class IP
 
    protected function check()
    {
+
       if( isset( $_GET['ip'] ) ) {
          $this->ip = $_GET['ip'];
-      } else if ( isset( $_SERVER['HTTP_CLIENT_IP'] ) ) {
-         $this->ip = $_SERVER['HTTP_CLIENT_IP'];
-      } else if ( isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
-         $this->ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
       } else {
-         $this->ip = $_SERVER['REMOTE_ADDR'];
+         $this->ip = $_SERVER['HTTP_X_REAL_IP'];
       }
 
       if( empty( $this->ip ) )
@@ -53,7 +50,8 @@ Class IP
 
    public function set()
    {
-      return $this->check();
+      $this->check();
+      return $this;
    }
 
    public function data()
