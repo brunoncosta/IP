@@ -7,7 +7,7 @@
 ## Built With
 
 * PHP
-* IP Address Data from [IPInfo](https://ipinfo.io/)
+* IP Data from [IPInfo](https://ipinfo.io/)
 
 ## config.php
 ```php
@@ -19,10 +19,10 @@ return [
 ];
 ```
 
-## Request GET 
+## GET Request  
 
 ```
-?ip=xxx.xxx.xxx.xxx
+?ip=YOUR_IP
 ```
 
 ## Response Data
